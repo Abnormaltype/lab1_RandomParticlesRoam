@@ -2,7 +2,7 @@ import random
 
 M, N = 8, 8
 X, Y = 4, 4
-P0, P1, P2, P3 = 0.2, 0.2, 0.2, 0.2
+P1, P2, P3, P4 = 0.2, 0.2, 0.2, 0.2
 NORTH, SOUTH, WEST, EAST, STOP = 0, 0, 0, 0, 0
 PARTICLES = 10_000_00
 
@@ -16,13 +16,13 @@ class Particle:
     def move(self):
         rand = random.random()
 
-        if rand < P0:
+        if rand < P1:
             self.y_coord += 1
-        elif rand < P0 + P1:
+        elif rand < P1 + P2:
             self.y_coord -= 1
-        elif rand < P0 + P1 + P2:
+        elif rand < P1 + P2 + P3:
             self.x_coord += 1
-        elif rand < P0 + P1 + P2 + P3:
+        elif rand < P1 + P2 + P3 + P4:
             self.x_coord -= 1
         else:
             self.is_stopped = True
